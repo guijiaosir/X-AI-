@@ -1,5 +1,7 @@
 X AI PUSH monitor<br>
 Real-time monitoring of X's AI push notifications<br><br>
+Supports date monitoring, allowing you to quickly understand today's AI market trends.<br><br>
+It is also applicable to regulatory authorities monitoring the behavior of specific accounts.<br><br>
 
 Real-time monitoring of the latest developments in the AI industry<br>
 <img width="602" height="555" alt="image" src="https://github.com/user-attachments/assets/94156e79-db37-4a3f-8343-8379f012a729" /><br><br>
