@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Notification System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <div class="container">
+        <header>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <div>
+                    <h1 style="font-size: 2rem; margin: 0; background: linear-gradient(90deg, #1d9bf0, #6bc9f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none;">Push Notification System</h1>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <a href="/guest/index.html" class="icon-btn" title="Client Page" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </a>
+                    <button id="settings-btn" class="icon-btn" title="Settings">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.3255 16.117C21.4315 15.426 21.4885 14.721 21.4885 14C21.4885 13.279 21.4315 12.574 21.3255 11.883L23.9455 9.836C24.1835 9.651 24.2505 9.319 24.0955 9.052L21.6185 4.762C21.4635 4.494 21.1345 4.39 20.8545 4.498L17.7665 5.742C17.1265 5.251 16.4275 4.843 15.6795 4.532L15.2125 1.246C15.1685 0.942 14.9075 0.72 14.6015 0.72H9.88851C9.58251 0.72 9.32151 0.942 9.27751 1.246L8.81051 4.532C8.06251 4.843 7.36351 5.251 6.72351 5.742L3.63551 4.498C3.35551 4.389 3.02651 4.494 2.87151 4.762L0.394508 9.052C0.239508 9.319 0.306508 9.651 0.544508 9.836L3.16451 11.883C3.05851 12.574 3.00151 13.279 3.00151 14C3.00151 14.721 3.05851 15.426 3.16451 16.117L0.544508 18.164C0.306508 18.349 0.239508 18.681 0.394508 18.948L2.87151 23.238C3.02651 23.506 3.35551 23.611 3.63551 23.502L6.72351 22.258C7.36351 22.749 8.06251 23.157 8.81051 23.468L9.27751 26.754C9.32151 27.058 9.58251 27.28 9.88851 27.28H14.6015C14.9075 27.28 15.1685 27.058 15.2125 26.754L15.6795 23.468C16.4275 23.157 17.1265 22.749 17.7665 22.258L20.8545 23.502C21.1345 23.611 21.4635 23.506 21.6185 23.238L24.0955 18.948C24.2505 18.681 24.1835 18.349 23.9455 18.164L21.3255 16.117ZM12.2455 18.8C9.59351 18.8 7.44551 16.652 7.44551 14C7.44551 11.348 9.59351 9.2 12.2455 9.2C14.8975 9.2 17.0455 11.348 17.0455 14C17.0455 16.652 14.8975 18.8 12.2455 18.8Z"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <div id="settings-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>User Management</h2>
+                <div class="add-user-box">
+                    <input type="text" id="new-user-input" placeholder="Enter username (e.g. elonmusk)">
+                    <button id="add-user-btn">Add</button>
+                </div>
+                <div id="user-list">
+                    <!-- User list will appear here -->
+                </div>
+
+                <div class="settings-options" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="today-only-toggle" style="margin-right: 10px; width: auto;" checked>
+                        <span>Only show today (24 hours)</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <button id="fetch-all-btn" style="width: 100%;">Refresh All Subscribed Users</button>
+        </div>
+
+        <div id="loading" class="hidden">Loading...</div>
+        <div id="error-message" class="hidden"></div>
+        
+        <div id="results-container">
+            <!-- Tweets will appear here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
