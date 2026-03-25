@@ -1,2 +1,2 @@
-# X-AI-
-X推送 了解AIGC实时前沿资讯
+X AI PUSH monitor
+Real-time monitoring of X's AI push notifications
